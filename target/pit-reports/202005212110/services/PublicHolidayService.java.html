@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>PublicHolidayService.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package services;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.json.JSONArray;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.json.JSONObject;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedReader;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.InputStreamReader;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.net.URL;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.net.URLConnection;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.time.LocalDate;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.time.ZoneId;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.time.ZonedDateTime;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class PublicHolidayService {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static final String COUNTRY_CODE = &#34;EE&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static final String API_URL = &#34;https://date.nager.at/api/v2/PublicHolidays/&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getPublicHolidaysOnWorkdays(ZonedDateTime startDate, ZonedDateTime endDate){</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        List&#60;ZonedDateTime&#62;result = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String composedUrl = API_URL + String.valueOf(endDate.getYear()) + &#34;/&#34; + COUNTRY_CODE;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int countOfHolidays = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            URL url = new URL(composedUrl);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            URLConnection yc = url.openConnection();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            String inputLine;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            String dateString;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_32'/>
+32
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_32'>1</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            while ((inputLine = in.readLine()) != null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                JSONArray arr = new JSONArray(inputLine);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_34'/>
+34
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_34'>2</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : changed conditional boundary &rarr; NO_COVERAGE<br/>
+
+2. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                for (int i = 0; i &#60; arr.length(); i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    JSONObject jsonObject = arr.getJSONObject(i);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    dateString = jsonObject.getString(&#34;date&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    LocalDate date = LocalDate.parse(dateString);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    ZonedDateTime zonedResult = date.atStartOfDay(ZoneId.of(&#34;UTC&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    result.add(zonedResult);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_43'/>
+43
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_43'>1</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : removed call to java/io/BufferedReader::close &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            in.close();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            for (ZonedDateTime zonedDateTime : result) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_46'/>
+46
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_46'>2</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+2. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                if((zonedDateTime.isAfter(startDate) || zonedDateTime.isEqual(startDate))</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_47'/>
+47
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_47'>1</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        &#38;&#38; zonedDateTime.isBefore(endDate)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    int dayOfWeek = zonedDateTime.getDayOfWeek().getValue();</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_49'/>
+49
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_49'>4</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : changed conditional boundary &rarr; NO_COVERAGE<br/>
+
+2. getPublicHolidaysOnWorkdays : changed conditional boundary &rarr; NO_COVERAGE<br/>
+
+3. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+4. getPublicHolidaysOnWorkdays : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                    if ((dayOfWeek &#62; 1) &#38;&#38; (dayOfWeek &#60; 7)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_50'/>
+50
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_50'>1</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : Changed increment from 1 to -1 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>                        countOfHolidays += 1;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        catch (Exception ex){</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_59'/>
+59
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_59'>1</a>
+<span>
+
+1. getPublicHolidaysOnWorkdays : replaced int return with 0 for services/PublicHolidayService::getPublicHolidaysOnWorkdays &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return countOfHolidays;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@41184371_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@41184371_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_32'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_34'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_43'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> removed call to java/io/BufferedReader::close &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_46'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_47'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_49'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_50'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@41184371_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@41184371_59'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getPublicHolidaysOnWorkdays<br/><b>Killed by : </b>none</span></span> replaced int return with 0 for services/PublicHolidayService::getPublicHolidaysOnWorkdays &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>NULL_RETURN_VALUES</li>
+
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>data.CourseTest.daysLength(data.CourseTest) (1055 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.5.1
+
+</body>
+</html>
